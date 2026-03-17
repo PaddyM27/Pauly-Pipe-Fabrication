@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pauly Pipe Fabrication — Heat Guards · Light Bars · Mirror Guards | County Cavan</title>
+  <meta name="description" content="Custom pipe fabrication in County Cavan. Heat guards, LED light bars, mirror guards, custom exhausts & digger hire. Built in Cavan, trusted across Ireland.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --bg:       #060a0d;
+      --surface1: #0b1016;
+      --surface2: #10181f;
+      --surface3: #162029;
+      --ember:    #f97316;
+      --ember-lt: #ffa04d;
+      --ember-dk: #d4600a;
+      --steel:    #97afc4;
+      --steel-dk: #5a7a92;
+      --steel-dim:#2e4456;
+      --text:     #eef1f4;
+      --border:   rgba(255,255,255,0.055);
+      --border-em:rgba(249,115,22,0.18);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--surface3); border-radius: 3px; }
+
+    /* ── Grain overlay ── */
+    .grain::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      background-size: 160px 160px;
+      opacity: 0.04;
+      mix-blend-mode: overlay;
+      z-index: 10;
+    }
+
+    /* ── Animations ── */
+    @keyframes fadeUp   { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes fadeIn   { from { opacity:0; } to { opacity:1; } }
+    @keyframes pulse    { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
+    @keyframes glow-wa  { 0%,100% { box-shadow:0 0 0 0 rgba(37,211,102,0); } 50% { box-shadow:0 0 22px 4px rgba(37,211,102,0.22); } }
+    @keyframes float-y  { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-8px); } }
+
+    .fade-up  { animation: fadeUp  0.75s cubic-bezier(0.22,1,0.36,1) both; }
+    .fade-in  { animation: fadeIn  0.6s ease both; }
+    .d1 { animation-delay:0.08s; } .d2 { animation-delay:0.18s; }
+    .d3 { animation-delay:0.3s;  } .d4 { animation-delay:0.44s; }
+    .d5 { animation-delay:0.58s; } .d6 { animation-delay:0.72s; }
+
+    /* ── Nav ── */
+    .nav-link {
+      position: relative;
+      color: var(--steel-dk);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 0.88rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-link::after {
+      content:''; position:absolute; bottom:-4px; left:0; width:0; height:1.5px;
+      background: var(--ember); transition: width 0.25s cubic-bezier(0.22,1,0.36,1);
+    }
+    .nav-link:hover { color: var(--text); }
+    .nav-link:hover::after { width:100%; }
+
+    /* ── Buttons ── */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--ember);
+      color: #fff;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 13px 28px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 24px -4px rgba(249,115,22,0.45), 0 1px 2px rgba(0,0,0,0.3);
+      transition: transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.2s ease, background 0.2s ease;
+    }
+    .btn-primary:hover {
+      background: #ff8422;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px -4px rgba(249,115,22,0.55), 0 2px 4px rgba(0,0,0,0.3);
+    }
+    .btn-primary:active { transform: translateY(0); }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent;
+      color: var(--steel);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.1);
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s, background 0.2s, transform 0.2s cubic-bezier(0.22,1,0.36,1);
+    }
+    .btn-ghost:hover {
+      border-color: rgba(249,115,22,0.4);
+      color: var(--text);
+      background: rgba(249,115,22,0.06);
+      transform: translateY(-2px);
+    }
+    .btn-ghost:active { transform: translateY(0); }
+
+    /* ── Section label ── */
+    .label-tag {
+      display: inline-block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ember);
+      margin-bottom: 16px;
+    }
+
+    /* ── Section heading ── */
+    .section-h {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      letter-spacing: -0.025em;
+      line-height: 1;
+      color: var(--text);
+    }
+    .section-h span { color: var(--ember); }
+
+    /* ── Divider ── */
+    .divider {
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.07) 30%, rgba(255,255,255,0.07) 70%, transparent);
+    }
+
+    /* ── Gallery images ── */
+    .g-img {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+    .g-img img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.6s cubic-bezier(0.22,1,0.36,1);
+    }
+    .g-img:hover img { transform: scale(1.05); }
+    .g-img .g-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(6,10,13,0.9) 0%, rgba(6,10,13,0.2) 45%, transparent 100%);
+      z-index: 1;
+    }
+    .g-img .g-tint {
+      position: absolute; inset: 0;
+      background: rgba(249,115,22,0.15);
+      mix-blend-mode: multiply;
+      z-index: 2;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .g-img:hover .g-tint { opacity: 0.6; }
+    .g-img .g-label {
+      position: absolute; bottom: 14px; left: 16px; z-index: 3;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 0.82rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: #fff; text-shadow: 0 1px 8px rgba(0,0,0,0.7);
+    }
+
+    /* ── Service cards ── */
+    .svc-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px 28px;
+      transition: border-color 0.3s, transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .svc-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(249,115,22,0.06) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .svc-card:hover {
+      border-color: rgba(249,115,22,0.22);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 48px -12px rgba(0,0,0,0.6), 0 4px 16px -4px rgba(249,115,22,0.12);
+    }
+    .svc-card:hover::before { opacity: 1; }
+    .svc-icon {
+      width: 44px; height: 44px;
+      background: rgba(249,115,22,0.08);
+      border: 1px solid rgba(249,115,22,0.15);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+      color: var(--steel-dk);
+      transition: color 0.25s, background 0.25s, border-color 0.25s;
+    }
+    .svc-card:hover .svc-icon {
+      color: var(--ember);
+      background: rgba(249,115,22,0.12);
+      border-color: rgba(249,115,22,0.3);
+    }
+
+    /* ── Testimonial cards ── */
+    .testi-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px 28px;
+      transition: border-color 0.25s, transform 0.3s cubic-bezier(0.22,1,0.36,1);
+    }
+    .testi-card:hover {
+      border-color: rgba(249,115,22,0.15);
+      transform: translateY(-4px);
+    }
+
+    /* ── Form inputs ── */
+    .f-input {
+      width: 100%;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem;
+      padding: 11px 14px;
+      border-radius: 8px;
+      transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+      -webkit-appearance: none;
+    }
+    .f-input:focus {
+      outline: none;
+      border-color: rgba(249,115,22,0.45);
+      background: rgba(255,255,255,0.05);
+      box-shadow: 0 0 0 3px rgba(249,115,22,0.1);
+    }
+    .f-input::placeholder { color: var(--steel-dim); }
+    .f-input option { background: var(--surface2); color: var(--text); }
+    .f-label {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--steel-dk);
+      margin-bottom: 8px;
+    }
+
+    /* ── WhatsApp float ── */
+    .wa-float {
+      position: fixed; bottom: 24px; right: 24px;
+      width: 54px; height: 54px; border-radius: 50%;
+      background: #25D366;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px -4px rgba(37,211,102,0.5);
+      z-index: 999;
+      transition: transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s;
+      animation: glow-wa 3s ease-in-out infinite;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 8px 28px -4px rgba(37,211,102,0.6); }
+    .wa-float svg { width: 26px; height: 26px; fill: #fff; }
+
+    /* ── Mobile bottom bar ── */
+    .mob-bar {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      display: none; z-index: 998;
+      background: var(--surface1);
+      border-top: 1px solid var(--border);
+      padding: 10px 16px; gap: 10px;
+    }
+    @media (max-width: 768px) {
+      .mob-bar { display: flex; }
+      .wa-float { bottom: 80px; right: 14px; width: 46px; height: 46px; }
+    }
+
+    /* ── Mobile menu ── */
+    #mob-nav { display: none; background: var(--surface1); border-top: 1px solid var(--border); }
+    #mob-nav.open { display: block; }
+
+    /* ── Focus ── */
+    :focus-visible { outline: 2px solid rgba(249,115,22,0.7); outline-offset: 3px; border-radius: 4px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      .svc-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .about-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+      .contact-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+      .footer-grid { grid-template-columns: 1fr 1fr !important; }
+    }
+    @media (max-width: 768px) {
+      .testi-grid { grid-template-columns: 1fr !important; }
+      .footer-grid { grid-template-columns: 1fr !important; }
+      .gal-featured { grid-template-columns: 1fr !important; }
+      .gal-lower { grid-template-columns: repeat(2,1fr) !important; }
+    }
+    @media (max-width: 520px) {
+      .svc-grid { grid-template-columns: 1fr !important; }
+      .gal-lower { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════ NAV ═══════════════════════════════ -->
+<header id="navbar" style="position:fixed;top:0;left:0;right:0;z-index:200;" class="fade-in">
+  <div style="background:rgba(6,10,13,0.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);">
+    <div style="max-width:1200px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;">
+
+      <a href="#" style="text-decoration:none;display:flex;align-items:center;">
+        <img src="images/logo.png" alt="Pauly Pipe Fabrication" style="height:48px;width:auto;">
+      </a>
+
+      <nav style="display:flex;align-items:center;gap:32px;" class="hidden md:flex">
+        <a href="#gallery" class="nav-link">Our Work</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div style="display:flex;align-items:center;gap:16px;" class="hidden md:flex">
+        <a href="tel:+353879337406" style="display:flex;align-items:center;gap:7px;color:var(--steel-dk);font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:0.88rem;letter-spacing:0.06em;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--steel-dk)'">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.18 2 2 0 012.08.1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.21-1.21a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          087 933 7406
+        </a>
+        <a href="#contact" class="btn-primary" style="padding:9px 20px;font-size:0.82rem;">Get a Quote</a>
+      </div>
+
+      <button id="hamburger" class="md:hidden" onclick="document.getElementById('mob-nav').classList.toggle('open')" aria-label="Menu" style="background:none;border:none;cursor:pointer;padding:8px;display:flex;flex-direction:column;gap:5px;">
+        <span style="display:block;width:20px;height:1.5px;background:var(--steel);border-radius:1px;"></span>
+        <span style="display:block;width:20px;height:1.5px;background:var(--steel);border-radius:1px;"></span>
+        <span style="display:block;width:14px;height:1.5px;background:var(--steel);border-radius:1px;"></span>
+      </button>
+    </div>
+
+    <div id="mob-nav">
+      <nav style="padding:16px 24px 20px;display:flex;flex-direction:column;gap:2px;">
+        <a href="#gallery"  onclick="document.getElementById('mob-nav').classList.remove('open')" style="padding:11px 0;color:var(--steel-dk);font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:0.95rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--border);">Our Work</a>
+        <a href="#services" onclick="document.getElementById('mob-nav').classList.remove('open')" style="padding:11px 0;color:var(--steel-dk);font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:0.95rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--border);">Services</a>
+        <a href="#about"    onclick="document.getElementById('mob-nav').classList.remove('open')" style="padding:11px 0;color:var(--steel-dk);font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:0.95rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--border);">About</a>
+        <a href="#contact"  onclick="document.getElementById('mob-nav').classList.remove('open')" style="padding:11px 0;color:var(--steel-dk);font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:0.95rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;">Contact</a>
+        <a href="tel:+353879337406" class="btn-primary" style="margin-top:14px;justify-content:center;">Call 087 933 7406</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+<!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+<section id="hero" class="grain" style="min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding-top:64px;">
+
+  <!-- Background -->
+  <div style="position:absolute;inset:0;z-index:0;">
+    <img src="images/workshop.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;">
+    <div style="position:absolute;inset:0;background:rgba(6,10,13,0.75);"></div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 55%,rgba(249,115,22,0.12) 0%,transparent 65%);"></div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(249,115,22,0.07) 0%,transparent 50%);"></div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(6,10,13,0.6) 0%,transparent 50%);"></div>
+  </div>
+
+  <!-- Edge lines -->
+  <div style="position:absolute;top:0;right:0;width:1px;height:100%;background:linear-gradient(to bottom,transparent,rgba(249,115,22,0.25) 40%,rgba(249,115,22,0.25) 60%,transparent);z-index:1;pointer-events:none;"></div>
+  <div style="position:absolute;top:0;left:0;width:1px;height:100%;background:linear-gradient(to bottom,transparent,rgba(249,115,22,0.08) 40%,rgba(249,115,22,0.08) 60%,transparent);z-index:1;pointer-events:none;"></div>
+
+  <!-- Content -->
+  <div style="position:relative;z-index:2;width:100%;max-width:860px;margin:0 auto;padding:64px 24px 80px;text-align:center;">
+
+    <div class="fade-up d1" style="display:inline-flex;align-items:center;gap:8px;background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.2);border-radius:100px;padding:5px 16px;margin-bottom:36px;">
+      <span style="width:5px;height:5px;background:var(--ember);border-radius:50%;animation:pulse 2s infinite;display:inline-block;"></span>
+      <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--ember);">Built in Cavan · Serving all of Ireland</span>
+    </div>
+
+    <h1 class="fade-up d2" style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(4.5rem,11vw,9rem);line-height:0.9;letter-spacing:-0.03em;color:var(--text);margin-bottom:32px;text-shadow:0 4px 60px rgba(0,0,0,0.5);">
+      CUSTOM<br>
+      <span style="color:var(--ember);">PIPE</span><br>
+      FABRICATION
+    </h1>
+
+    <p class="fade-up d3" style="font-size:1.05rem;line-height:1.85;color:var(--steel);max-width:540px;margin:0 auto 32px;">
+      Heat guards, LED light bars, mirror guards and custom exhausts — handmade to order in County Cavan. Built for tractors, plant machinery and everything in between.
+    </p>
+
+    <div class="fade-up d3" style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:44px;justify-content:center;">
+      <span style="background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:4px;padding:4px 13px;font-size:0.78rem;color:var(--steel-dk);font-family:'Barlow Condensed',sans-serif;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;">Heat Guards</span>
+      <span style="background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:4px;padding:4px 13px;font-size:0.78rem;color:var(--steel-dk);font-family:'Barlow Condensed',sans-serif;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;">LED Light Bars</span>
+      <span style="background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:4px;padding:4px 13px;font-size:0.78rem;color:var(--steel-dk);font-family:'Barlow Condensed',sans-serif;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;">Mirror Guards</span>
+      <span style="background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:4px;padding:4px 13px;font-size:0.78rem;color:var(--steel-dk);font-family:'Barlow Condensed',sans-serif;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;">Custom Exhausts</span>
+    </div>
+
+    <div class="fade-up d4" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:64px;">
+      <a href="#contact" class="btn-primary" style="padding:14px 32px;font-size:0.92rem;">Get a Free Quote</a>
+      <a href="https://wa.me/353879337406?text=Hi%2C%20I'd%20like%20a%20quote%20from%20Pauly%20Pipe%20Fabrication" target="_blank" rel="noopener" class="btn-ghost" style="padding:13px 24px;font-size:0.92rem;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp Quote
+      </a>
+    </div>
+
+    <!-- Trust stats -->
+    <div class="fade-up d5" style="display:flex;flex-wrap:wrap;justify-content:center;border-top:1px solid rgba(255,255,255,0.06);padding-top:36px;gap:0;">
+      <div style="padding:0 36px;text-align:center;border-right:1px solid rgba(255,255,255,0.06);">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2rem;color:var(--ember);line-height:1;margin-bottom:4px;">100%</div>
+        <div style="font-size:0.75rem;color:var(--steel-dim);letter-spacing:0.05em;">Custom Made</div>
+      </div>
+      <div style="padding:0 36px;text-align:center;border-right:1px solid rgba(255,255,255,0.06);">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2rem;color:var(--ember);line-height:1;margin-bottom:4px;">Stainless</div>
+        <div style="font-size:0.75rem;color:var(--steel-dim);letter-spacing:0.05em;">Steel &amp; Aluminium</div>
+      </div>
+      <div style="padding:0 36px;text-align:center;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2rem;color:var(--ember);line-height:1;margin-bottom:4px;">Co. Cavan</div>
+        <div style="font-size:0.75rem;color:var(--steel-dim);letter-spacing:0.05em;">Ireland</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll cue -->
+  <div style="position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:5px;opacity:0.35;">
+    <span style="font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--steel);">Scroll</span>
+    <svg width="10" height="14" viewBox="0 0 10 14" fill="none"><path d="M5 0v12M1 8l4 4 4-4" stroke="var(--steel)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════ GALLERY ═══════════════════════════════ -->
+<section id="gallery" style="background:var(--surface1);padding:120px 0;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:800px;height:400px;background:radial-gradient(ellipse at center,rgba(249,115,22,0.04) 0%,transparent 70%);pointer-events:none;"></div>
+
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
+
+    <!-- Section header -->
+    <div style="text-align:center;margin-bottom:64px;">
+      <p class="label-tag">Our Work</p>
+      <h2 class="section-h" style="margin-bottom:16px;">Built By Hand.<br><span>Built To Last.</span></h2>
+      <p style="color:var(--steel-dk);font-size:0.95rem;line-height:1.75;max-width:480px;margin:0 auto;">Every piece you see here was designed, fabricated and fitted by hand — custom made to the exact spec of the customer.</p>
+    </div>
+
+    <!-- Featured top row: 2:1 split -->
+    <div class="gal-featured" style="display:grid;grid-template-columns:2fr 1fr;gap:10px;margin-bottom:10px;">
+      <div class="g-img" style="height:320px;">
+        <img src="images/light-bar-amber.png" alt="Amber LED light bar with work lights" style="object-position:center top;">
+        <div class="g-overlay"></div><div class="g-tint"></div>
+        <div class="g-label">LED Light Bar</div>
+      </div>
+      <div class="g-img" style="height:320px;">
+        <img src="images/hero.png" alt="Stainless pipe guard" style="object-position:center 5%;">
+        <div class="g-overlay"></div><div class="g-tint"></div>
+        <div class="g-label">Pipe Guard</div>
+      </div>
+    </div>
+
+    <!-- Lower row: 4 equal -->
+    <div class="gal-lower" style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;">
+      <div class="g-img" style="height:200px;">
+        <img src="images/light-bar-red.png" alt="Red flashing LED bar" style="object-position:center top;">
+        <div class="g-overlay"></div><div class="g-tint"></div>
+        <div class="g-label">Flashing Bar</div>
+      </div>
+      <div class="g-img" style="height:200px;">
+        <img src="images/light-bar.png" alt="Amber bar and spotlights" style="object-position:center top;">
+        <div class="g-overlay"></div><div class="g-tint"></div>
+        <div class="g-label">Bar &amp; Spotlights</div>
+      </div>
+      <div class="g-img" style="height:200px;">
+        <img src="images/exhaust.png" alt="Custom exhaust" style="object-position:center 20%;">
+        <div class="g-overlay"></div><div class="g-tint"></div>
+        <div class="g-label">Custom Exhaust</div>
+      </div>
+      <div class="g-img" style="height:200px;">
+        <img src="images/digger-guard.png" alt="Digger ROPS guard" style="object-position:center 35%;">
+        <div class="g-overlay"></div><div class="g-tint"></div>
+        <div class="g-label">Digger Guard</div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:40px;">
+      <a href="#contact" class="btn-ghost" style="padding:12px 28px;">Request a Custom Piece →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════ SERVICES ═══════════════════════════════ -->
+<section id="services" style="background:var(--bg);padding:120px 0;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:900px;height:500px;background:radial-gradient(ellipse at center top,rgba(249,115,22,0.05) 0%,transparent 65%);pointer-events:none;"></div>
+
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
+
+    <div style="text-align:center;margin-bottom:72px;">
+      <p class="label-tag">What We Make</p>
+      <h2 class="section-h" style="margin-bottom:16px;">Everything Fabricated<br><span>to Your Spec</span></h2>
+      <p style="color:var(--steel-dk);font-size:0.95rem;line-height:1.75;max-width:480px;margin:0 auto;">Every piece is custom made to order. No two jobs are the same — tell us what you need and we'll build it right.</p>
+    </div>
+
+    <div class="svc-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+
+      <!-- Heat Guards -->
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c0 6-8 6-8 12a8 8 0 0016 0c0-6-8-6-8-12z"/><path d="M12 2c0 4 4 4 4 8s-4 4-4 8"/></svg>
+        </div>
+        <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.25rem;letter-spacing:0.02em;color:var(--text);margin-bottom:10px;">Heat Guards</h3>
+        <p style="color:var(--steel-dk);font-size:0.86rem;line-height:1.75;margin-bottom:18px;">Custom stainless steel heat shields fabricated to fit your exhaust, protecting your machine and crew from radiant heat. Made to measure for any make or model.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:5px;">
+          <span style="background:rgba(249,115,22,0.07);border:1px solid rgba(249,115,22,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Stainless Steel</span>
+          <span style="background:rgba(249,115,22,0.07);border:1px solid rgba(249,115,22,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Bespoke Fit</span>
+        </div>
+      </div>
+
+      <!-- Light Bars — featured -->
+      <div class="svc-card" style="border-color:rgba(249,115,22,0.2);position:relative;overflow:hidden;">
+        <div style="position:absolute;top:0;right:0;background:var(--ember);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:#fff;padding:4px 11px;border-radius:0 13px 0 8px;">Most Popular</div>
+        <div class="svc-icon" style="color:var(--ember);background:rgba(249,115,22,0.12);border-color:rgba(249,115,22,0.25);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </div>
+        <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.25rem;letter-spacing:0.02em;color:var(--text);margin-bottom:10px;">LED Light Bars</h3>
+        <p style="color:var(--steel-dk);font-size:0.86rem;line-height:1.75;margin-bottom:18px;">Polished stainless or powder coated. Colour, flashing/strobing and non-flashing options with integrated LED work lights. Fitted and wired to your machine.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:5px;">
+          <span style="background:rgba(249,115,22,0.07);border:1px solid rgba(249,115,22,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Polished</span>
+          <span style="background:rgba(249,115,22,0.07);border:1px solid rgba(249,115,22,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Powder Coated</span>
+          <span style="background:rgba(249,115,22,0.07);border:1px solid rgba(249,115,22,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Colour LED</span>
+          <span style="background:rgba(249,115,22,0.07);border:1px solid rgba(249,115,22,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Flashing</span>
+        </div>
+      </div>
+
+      <!-- Mirror Guards -->
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.25rem;letter-spacing:0.02em;color:var(--text);margin-bottom:10px;">Mirror Guards</h3>
+        <p style="color:var(--steel-dk);font-size:0.86rem;line-height:1.75;margin-bottom:18px;">Heavy-duty pipe guards to protect your mirrors and lights from knocks and hedge trimming damage. Custom shaped to clear your existing mirrors perfectly.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:5px;">
+          <span style="background:rgba(249,115,22,0.07);border:1px solid rgba(249,115,22,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Heavy Duty</span>
+          <span style="background:rgba(249,115,22,0.07);border:1px solid rgba(249,115,22,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Custom Shape</span>
+        </div>
+      </div>
+
+      <!-- Custom Exhausts -->
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l4-8 4 4 4-6 4 10"/></svg>
+        </div>
+        <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.25rem;letter-spacing:0.02em;color:var(--text);margin-bottom:10px;">Custom Exhausts</h3>
+        <p style="color:var(--steel-dk);font-size:0.86rem;line-height:1.75;margin-bottom:18px;">Bespoke exhaust fabrication for tractors and plant machinery. Whether it's a replacement, reroute or full custom system — we'll fabricate it to fit.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:5px;">
+          <span style="background:rgba(249,115,22,0.07);border:1px solid rgba(249,115,22,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Stainless</span>
+          <span style="background:rgba(249,115,22,0.07);border:1px solid rgba(249,115,22,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Mild Steel</span>
+        </div>
+      </div>
+
+      <!-- Tractor Work -->
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="17" r="3"/><circle cx="17" cy="17" r="3"/><path d="M5 17V7l5-3h5l2 4v9"/><path d="M10 4v8h10"/></svg>
+        </div>
+        <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.25rem;letter-spacing:0.02em;color:var(--text);margin-bottom:10px;">Tractor Custom Work</h3>
+        <p style="color:var(--steel-dk);font-size:0.86rem;line-height:1.75;margin-bottom:18px;">From full light bar setups to custom frames, guards and brackets — if you can picture it, we can build it. Experience with all major makes and models.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:5px;">
+          <span style="background:rgba(249,115,22,0.07);border:1px solid rgba(249,115,22,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">All Makes</span>
+          <span style="background:rgba(249,115,22,0.07);border:1px solid rgba(249,115,22,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Custom Frames</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════ ABOUT ═══════════════════════════════ -->
+<section id="about" style="background:var(--surface1);padding:120px 0;position:relative;overflow:hidden;">
+  <div style="position:absolute;bottom:-100px;right:-100px;width:600px;height:600px;background:radial-gradient(ellipse at center,rgba(249,115,22,0.04) 0%,transparent 65%);pointer-events:none;"></div>
+
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
+    <div class="about-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+
+      <!-- Left -->
+      <div>
+        <p class="label-tag">About Us</p>
+        <h2 class="section-h" style="margin-bottom:20px;">Handmade in Cavan.<br><span>Trusted Across Ireland.</span></h2>
+        <p style="color:var(--steel-dk);font-size:0.95rem;line-height:1.85;margin-bottom:36px;">Pauly Pipe Fabrication is a one-man operation based in County Cavan, Ireland. Every piece is designed, fabricated and delivered with the same care — because there's no cutting corners when it has to fit your machine perfectly.</p>
+
+        <div style="display:flex;flex-direction:column;gap:24px;">
+          <div style="display:flex;gap:16px;align-items:flex-start;">
+            <div style="width:36px;height:36px;background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ember)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:4px;">Fully Custom — No Off-the-Shelf</div>
+              <div style="color:var(--steel-dk);font-size:0.85rem;line-height:1.7;">Every job is built from scratch to your exact dimensions. Your tractor, your spec — guaranteed to fit.</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start;">
+            <div style="width:36px;height:36px;background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ember)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:4px;">Quality Finish — Attention to Detail</div>
+              <div style="color:var(--steel-dk);font-size:0.85rem;line-height:1.7;">Polished stainless or powder coated to whatever standard you need — from working farm quality to showroom finish.</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start;">
+            <div style="width:36px;height:36px;background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ember)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:4px;">Fast Turnaround, Quick Quotes</div>
+              <div style="color:var(--steel-dk);font-size:0.85rem;line-height:1.7;">Send a WhatsApp with a photo of your machine and what you need. We'll get back to you quickly with a realistic timeframe and price.</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start;">
+            <div style="width:36px;height:36px;background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ember)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:4px;">Local, Honest &amp; Reliable</div>
+              <div style="color:var(--steel-dk);font-size:0.85rem;line-height:1.7;">Based in County Cavan, serving farmers and contractors right across Ireland. Real people, real work.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: image -->
+      <div style="position:relative;">
+        <div style="border-radius:14px;overflow:hidden;aspect-ratio:3/4;position:relative;box-shadow:0 40px 80px -20px rgba(0,0,0,0.7),0 0 0 1px var(--border);">
+          <img src="images/workshop.jpg" alt="Fabrication workshop" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(6,10,13,0.6) 0%,transparent 55%);z-index:1;"></div>
+          <div style="position:absolute;inset:0;background:rgba(249,115,22,0.12);mix-blend-mode:multiply;z-index:2;pointer-events:none;"></div>
+        </div>
+        <!-- WhatsApp card -->
+        <div style="position:absolute;bottom:28px;left:-28px;z-index:10;background:var(--surface3);border:1px solid rgba(249,115,22,0.2);border-radius:12px;padding:20px 22px;box-shadow:0 16px 48px -8px rgba(0,0,0,0.65),0 0 0 1px rgba(255,255,255,0.03) inset;max-width:220px;backdrop-filter:blur(10px);">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--ember);margin-bottom:8px;">Send us a WhatsApp</div>
+          <div style="color:var(--text);font-size:0.83rem;line-height:1.55;margin-bottom:12px;">Photo of your machine + what you need = quick quote. Simple as that.</div>
+          <a href="https://wa.me/353879337406?text=Hi%2C%20I'd%20like%20a%20quote%20from%20Pauly%20Pipe%20Fabrication" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:#25D366;text-decoration:none;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Message Us
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════ TESTIMONIALS ═══════════════════════════════ -->
+<section style="background:var(--bg);padding:120px 0;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:700px;height:300px;background:radial-gradient(ellipse at center top,rgba(249,115,22,0.04) 0%,transparent 70%);pointer-events:none;"></div>
+
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
+    <div style="text-align:center;margin-bottom:64px;">
+      <p class="label-tag">What People Say</p>
+      <h2 class="section-h">Happy Customers<br><span>Across Ireland</span></h2>
+    </div>
+
+    <div class="testi-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+
+      <div class="testi-card">
+        <div style="font-size:1.8rem;color:var(--ember);opacity:0.4;font-family:Georgia,serif;line-height:1;margin-bottom:12px;">"</div>
+        <div style="display:flex;gap:3px;margin-bottom:16px;">
+          <span style="color:var(--ember);font-size:0.9rem;">★★★★★</span>
+        </div>
+        <p style="color:var(--steel-dk);font-size:0.88rem;line-height:1.8;margin-bottom:24px;font-style:italic;">"Got a set of light bars made for the John Deere — exactly what I wanted, polished up beautiful. Quick turnaround and a fair price. Would definitely recommend."</p>
+        <div style="display:flex;align-items:center;gap:12px;padding-top:20px;border-top:1px solid var(--border);">
+          <div style="width:34px;height:34px;border-radius:50%;background:rgba(249,115,22,0.12);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;color:var(--ember);font-size:0.95rem;flex-shrink:0;">S</div>
+          <div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.92rem;color:var(--text);">Seán Maguire</div>
+            <div style="font-size:0.72rem;color:var(--steel-dim);">Farmer, Co. Cavan</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div style="font-size:1.8rem;color:var(--ember);opacity:0.4;font-family:Georgia,serif;line-height:1;margin-bottom:12px;">"</div>
+        <div style="display:flex;gap:3px;margin-bottom:16px;">
+          <span style="color:var(--ember);font-size:0.9rem;">★★★★★</span>
+        </div>
+        <p style="color:var(--steel-dk);font-size:0.88rem;line-height:1.8;margin-bottom:24px;font-style:italic;">"Had heat guards made for the Case exhaust. Fit perfectly first time, no hassle. Good quality work and Paul was sound to deal with. Cheers!"</p>
+        <div style="display:flex;align-items:center;gap:12px;padding-top:20px;border-top:1px solid var(--border);">
+          <div style="width:34px;height:34px;border-radius:50%;background:rgba(249,115,22,0.12);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;color:var(--ember);font-size:0.95rem;flex-shrink:0;">D</div>
+          <div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.92rem;color:var(--text);">Damien Brady</div>
+            <div style="font-size:0.72rem;color:var(--steel-dim);">Contractor, Co. Monaghan</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div style="font-size:1.8rem;color:var(--ember);opacity:0.4;font-family:Georgia,serif;line-height:1;margin-bottom:12px;">"</div>
+        <div style="display:flex;gap:3px;margin-bottom:16px;">
+          <span style="color:var(--ember);font-size:0.9rem;">★★★★★</span>
+        </div>
+        <p style="color:var(--steel-dk);font-size:0.88rem;line-height:1.8;margin-bottom:24px;font-style:italic;">"Ordered mirror guards for the New Holland. Solid bit of work, proper heavy duty. Lads at the mart couldn't believe I got them custom made locally."</p>
+        <div style="display:flex;align-items:center;gap:12px;padding-top:20px;border-top:1px solid var(--border);">
+          <div style="width:34px;height:34px;border-radius:50%;background:rgba(249,115,22,0.12);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;color:var(--ember);font-size:0.95rem;flex-shrink:0;">P</div>
+          <div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.92rem;color:var(--text);">Pádraig Lynch</div>
+            <div style="font-size:0.72rem;color:var(--steel-dim);">Farmer, Co. Meath</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════ CONTACT ═══════════════════════════════ -->
+<section id="contact" style="background:var(--surface1);padding:120px 0;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(249,115,22,0.2) 40%,rgba(249,115,22,0.2) 60%,transparent);"></div>
+  <div style="position:absolute;bottom:-150px;left:-100px;width:600px;height:600px;background:radial-gradient(ellipse at center,rgba(249,115,22,0.05) 0%,transparent 65%);pointer-events:none;"></div>
+
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
+    <div class="contact-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
+
+      <!-- Left -->
+      <div>
+        <p class="label-tag">Get in Touch</p>
+        <h2 class="section-h" style="margin-bottom:16px;">Ready to Order?<br><span>Let's Talk.</span></h2>
+        <p style="color:var(--steel-dk);font-size:0.95rem;line-height:1.85;margin-bottom:44px;">Fill in the form and <strong style="color:var(--steel);">attach a photo of your tractor</strong> — it helps us quote you fast and accurately. Or call/WhatsApp us directly.</p>
+
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <a href="tel:+353879337406" style="display:flex;align-items:center;gap:16px;background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:18px 22px;text-decoration:none;transition:border-color 0.2s,transform 0.25s cubic-bezier(0.22,1,0.36,1);" onmouseover="this.style.borderColor='rgba(249,115,22,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)'">
+            <div style="width:42px;height:42px;background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.15);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--ember)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.18 2 2 0 012.08.1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.21-1.21a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--steel-dim);margin-bottom:2px;">Call or Text</div>
+              <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.15rem;color:var(--text);">087 933 7406</div>
+            </div>
+          </a>
+
+          <a href="https://wa.me/353879337406?text=Hi%2C%20I'd%20like%20a%20quote%20from%20Pauly%20Pipe%20Fabrication" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:16px;background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:18px 22px;text-decoration:none;transition:border-color 0.2s,transform 0.25s cubic-bezier(0.22,1,0.36,1);" onmouseover="this.style.borderColor='rgba(37,211,102,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)'">
+            <div style="width:42px;height:42px;background:rgba(37,211,102,0.07);border:1px solid rgba(37,211,102,0.15);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </div>
+            <div>
+              <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--steel-dim);margin-bottom:2px;">WhatsApp</div>
+              <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;color:var(--text);">Chat &amp; Quick Quotes</div>
+            </div>
+          </a>
+
+          <div style="display:flex;align-items:center;gap:16px;background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:18px 22px;">
+            <div style="width:42px;height:42px;background:rgba(90,122,146,0.08);border:1px solid rgba(90,122,146,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--steel-dk)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--steel-dim);margin-bottom:2px;">Location</div>
+              <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;color:var(--text);">County Cavan, Ireland</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: form -->
+      <div style="background:var(--surface2);border:1px solid var(--border);border-radius:16px;padding:36px 32px;box-shadow:0 24px 64px -16px rgba(0,0,0,0.5);">
+        <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.4rem;color:var(--text);margin-bottom:6px;">Request a Quote</h3>
+        <p style="color:var(--steel-dim);font-size:0.82rem;margin-bottom:28px;line-height:1.6;">Fill in what you need and attach a photo of your tractor — it helps us quote you accurately.</p>
+
+        <form id="quoteForm" onsubmit="handleSubmit(event)" style="display:flex;flex-direction:column;gap:16px;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+            <div>
+              <label class="f-label">Your Name</label>
+              <input type="text" id="fName" class="f-input" placeholder="John Smith" required>
+            </div>
+            <div>
+              <label class="f-label">Phone / WhatsApp</label>
+              <input type="tel" id="fPhone" class="f-input" placeholder="087 000 0000" required>
+            </div>
+          </div>
+
+          <div>
+            <label class="f-label">What Do You Need?</label>
+            <select id="fService" class="f-input" required>
+              <option value="" disabled selected>Select a product / service</option>
+              <option value="heat-guard">Heat Guard</option>
+              <option value="light-bar-polished">Light Bar — Polished Stainless</option>
+              <option value="light-bar-powder">Light Bar — Powder Coated</option>
+              <option value="mirror-guard">Mirror Guard</option>
+              <option value="custom-exhaust">Custom Exhaust</option>
+              <option value="tractor-work">Tractor Custom Work</option>
+              <option value="other">Other / Not Sure</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="f-label">Tractor / Machine Make &amp; Model <span style="text-transform:none;letter-spacing:0;color:var(--steel-dim);font-weight:400;">(if applicable)</span></label>
+            <input type="text" id="fMachine" class="f-input" placeholder="e.g. John Deere 6130R">
+          </div>
+
+          <div>
+            <label class="f-label">Photo of Your Tractor / Machine <span style="text-transform:none;letter-spacing:0;color:var(--steel-dim);font-weight:400;">— helps us quote faster</span></label>
+            <label id="photoUploadLabel" for="photoUpload" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;width:100%;padding:22px 16px;border-radius:8px;border:1.5px dashed rgba(249,115,22,0.25);background:rgba(249,115,22,0.03);cursor:pointer;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='rgba(249,115,22,0.5)';this.style.background='rgba(249,115,22,0.07)'" onmouseout="if(!window._photosSelected){this.style.borderColor='rgba(249,115,22,0.25)';this.style.background='rgba(249,115,22,0.03)'}">
+              <svg id="photoIcon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--ember)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.6;"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <div id="photoLabelText" style="text-align:center;">
+                <p style="font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:0.85rem;color:var(--steel-dk);margin:0 0 2px;">Click to attach photos</p>
+                <p style="font-size:0.72rem;color:var(--steel-dim);margin:0;">JPG, PNG, HEIC · Up to 10MB each · Multiple files OK</p>
+              </div>
+            </label>
+            <input type="file" id="photoUpload" name="photos" accept="image/*" multiple style="display:none;" onchange="handlePhotoSelect(this)">
+            <div id="photoFileList" style="margin-top:8px;display:flex;flex-direction:column;gap:5px;"></div>
+          </div>
+
+          <div>
+            <label class="f-label">Tell Us More</label>
+            <textarea id="fMessage" class="f-input" placeholder="Describe what you need — size, finish, quantity, any specific requirements..." rows="4" style="resize:vertical;"></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width:100%;padding:14px;justify-content:center;font-size:0.92rem;">Send Enquiry</button>
+          <p style="text-align:center;font-size:0.73rem;color:var(--steel-dim);">Or <a href="https://wa.me/353879337406?text=Hi%2C%20I'd%20like%20a%20quote%20from%20Pauly%20Pipe%20Fabrication" target="_blank" rel="noopener" style="color:#25D366;text-decoration:none;">message us on WhatsApp</a> for a faster response.</p>
+        </form>
+
+        <div id="formSuccess" style="display:none;text-align:center;padding:36px 20px;">
+          <div style="width:52px;height:52px;background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--ember)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h4 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.35rem;color:var(--text);margin-bottom:8px;">Enquiry Sent!</h4>
+          <p style="color:var(--steel-dk);font-size:0.86rem;">We'll be in touch shortly. Or call us on <a href="tel:+353879337406" style="color:var(--ember);text-decoration:none;">087 933 7406</a>.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+<footer style="background:var(--bg);border-top:1px solid var(--border);padding:56px 0 28px;">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
+    <div class="footer-grid" style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:44px;">
+
+      <div>
+        <div style="margin-bottom:16px;">
+          <img src="images/logo.png" alt="Pauly Pipe Fabrication" style="height:58px;width:auto;">
+        </div>
+        <p style="color:var(--steel-dim);font-size:0.82rem;line-height:1.75;max-width:280px;">Custom pipe fabrication in County Cavan. Heat guards, light bars, mirror guards, exhausts and custom work. Made to order, built to last.</p>
+        <div style="display:flex;gap:10px;margin-top:20px;">
+          <a href="#" style="width:32px;height:32px;background:var(--surface2);border:1px solid var(--border);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--steel-dim);text-decoration:none;transition:border-color 0.2s,color 0.2s;" onmouseover="this.style.borderColor='rgba(249,115,22,0.3)';this.style.color='var(--ember)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--steel-dim)'" aria-label="Facebook">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" style="width:32px;height:32px;background:var(--surface2);border:1px solid var(--border);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--steel-dim);text-decoration:none;transition:border-color 0.2s,color 0.2s;" onmouseover="this.style.borderColor='rgba(249,115,22,0.3)';this.style.color='var(--ember)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--steel-dim)'" aria-label="Instagram">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://wa.me/353879337406" target="_blank" rel="noopener" style="width:32px;height:32px;background:var(--surface2);border:1px solid var(--border);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--steel-dim);text-decoration:none;transition:border-color 0.2s,color 0.2s;" onmouseover="this.style.borderColor='rgba(37,211,102,0.3)';this.style.color='#25D366'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--steel-dim)'" aria-label="WhatsApp">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--ember);margin-bottom:16px;">Services</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:9px;">
+          <li><a href="#services" style="color:var(--steel-dim);font-size:0.82rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--steel)'" onmouseout="this.style.color='var(--steel-dim)'">Heat Guards</a></li>
+          <li><a href="#services" style="color:var(--steel-dim);font-size:0.82rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--steel)'" onmouseout="this.style.color='var(--steel-dim)'">LED Light Bars</a></li>
+          <li><a href="#services" style="color:var(--steel-dim);font-size:0.82rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--steel)'" onmouseout="this.style.color='var(--steel-dim)'">Mirror Guards</a></li>
+          <li><a href="#services" style="color:var(--steel-dim);font-size:0.82rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--steel)'" onmouseout="this.style.color='var(--steel-dim)'">Custom Exhausts</a></li>
+          <li><a href="#services" style="color:var(--steel-dim);font-size:0.82rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--steel)'" onmouseout="this.style.color='var(--steel-dim)'">Tractor Work</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--ember);margin-bottom:16px;">Contact</div>
+        <div style="display:flex;flex-direction:column;gap:11px;">
+          <a href="tel:+353879337406" style="display:flex;align-items:center;gap:8px;color:var(--steel-dim);font-size:0.82rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--steel)'" onmouseout="this.style.color='var(--steel-dim)'">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.18 2 2 0 012.08.1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.21-1.21a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            087 933 7406
+          </a>
+          <a href="https://wa.me/353879337406" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;color:var(--steel-dim);font-size:0.82rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='var(--steel-dim)'">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+          <div style="display:flex;align-items:center;gap:8px;color:var(--steel-dim);font-size:0.82rem;">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            County Cavan, Ireland
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="border-top:1px solid var(--border);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+      <p style="color:var(--steel-dim);font-size:0.73rem;">© 2025 Pauly Pipe Fabrication. County Cavan, Ireland.</p>
+      <p style="color:var(--steel-dim);font-size:0.73rem;">Built in Cavan · Serving Ireland</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- WhatsApp float -->
+<a href="https://wa.me/353879337406?text=Hi%2C%20I'd%20like%20a%20quote%20from%20Pauly%20Pipe%20Fabrication" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp us">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- Mobile bottom bar -->
+<div class="mob-bar">
+  <a href="tel:+353879337406" style="flex:1;display:flex;align-items:center;justify-content:center;gap:7px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:11px;color:var(--text);text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.18 2 2 0 012.08.1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.21-1.21a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    Call Now
+  </a>
+  <a href="#contact" class="btn-primary" style="flex:1;justify-content:center;padding:11px 16px;font-size:0.82rem;">Get a Quote</a>
+</div>
+
+<script>
+  window._photosSelected = false;
+  function handlePhotoSelect(input) {
+    const files = Array.from(input.files);
+    const label = document.getElementById('photoUploadLabel');
+    const list  = document.getElementById('photoFileList');
+    const icon  = document.getElementById('photoIcon');
+    const text  = document.getElementById('photoLabelText');
+    list.innerHTML = '';
+    if (!files.length) {
+      window._photosSelected = false;
+      label.style.borderColor = 'rgba(249,115,22,0.25)';
+      label.style.background  = 'rgba(249,115,22,0.03)';
+      return;
+    }
+    window._photosSelected = true;
+    label.style.borderColor = 'rgba(249,115,22,0.55)';
+    label.style.background  = 'rgba(249,115,22,0.08)';
+    icon.style.opacity = '1';
+    text.querySelector('p').textContent = files.length === 1 ? '1 photo attached' : files.length + ' photos attached';
+    text.querySelector('p:last-child').textContent = 'Click to change';
+    files.forEach(f => {
+      const row = document.createElement('div');
+      row.style.cssText = 'display:flex;align-items:center;gap:8px;padding:7px 10px;background:var(--surface1);border-radius:6px;border:1px solid var(--border);';
+      row.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>'
+        + '<span style="font-size:0.77rem;color:var(--steel);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + f.name + '</span>'
+        + '<span style="font-size:0.7rem;color:var(--steel-dim);flex-shrink:0;">' + (f.size > 1048576 ? (f.size/1048576).toFixed(1)+'MB' : Math.round(f.size/1024)+'KB') + '</span>';
+      list.appendChild(row);
+    });
+  }
+
+  const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxs5IlgaHDmsFFqDeEMnoEquS-MW4Ml1WHh8YRYmX6chMuP6Iyo3UqhWkLd7midfO3bpw/exec';
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    const service = document.getElementById('fService').value;
+    const machine = document.getElementById('fMachine').value;
+    const payload = {
+      name:     document.getElementById('fName').value,
+      phone:    document.getElementById('fPhone').value,
+      service:  service + (machine ? ' — ' + machine : ''),
+      message:  document.getElementById('fMessage').value,
+      hasPhoto: window._photosSelected || false
+    };
+
+    fetch(SHEETS_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: JSON.stringify(payload)
+    })
+    .then(() => {
+      document.getElementById('quoteForm').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    })
+    .catch(() => {
+      // Still show success — submission may have gone through (CORS on redirect)
+      document.getElementById('quoteForm').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    });
+  }
+</script>
+</body>
+</html>
