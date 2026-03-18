@@ -966,6 +966,14 @@
 
   const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxs5IlgaHDmsFFqDeEMnoEquS-MW4Ml1WHh8YRYmX6chMuP6Iyo3UqhWkLd7midfO3bpw/exec';
 
+  function readFilesAsBase64(files) {
+    return Promise.all(files.map(file => new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve({ name: file.name, type: file.type, data: reader.result });
+      reader.readAsDataURL(file);
+    })));
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
     const btn = e.target.querySelector('button[type="submit"]');
@@ -974,27 +982,32 @@
 
     const service = document.getElementById('fService').value;
     const machine = document.getElementById('fMachine').value;
-    const payload = {
-      name:     document.getElementById('fName').value,
-      phone:    document.getElementById('fPhone').value,
-      service:  service + (machine ? ' — ' + machine : ''),
-      message:  document.getElementById('fMessage').value,
-      hasPhoto: window._photosSelected || false
-    };
+    const photoInput = document.getElementById('photoUpload');
+    const files = photoInput.files ? Array.from(photoInput.files) : [];
 
-    fetch(SHEETS_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      body: JSON.stringify(payload)
-    })
-    .then(() => {
-      document.getElementById('quoteForm').style.display = 'none';
-      document.getElementById('formSuccess').style.display = 'block';
-    })
-    .catch(() => {
-      // Still show success — submission may have gone through (CORS on redirect)
-      document.getElementById('quoteForm').style.display = 'none';
-      document.getElementById('formSuccess').style.display = 'block';
+    readFilesAsBase64(files).then(photos => {
+      const payload = {
+        name:     document.getElementById('fName').value,
+        phone:    document.getElementById('fPhone').value,
+        service:  service + (machine ? ' — ' + machine : ''),
+        message:  document.getElementById('fMessage').value,
+        hasPhoto: photos.length > 0,
+        photos:   photos
+      };
+
+      fetch(SHEETS_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: JSON.stringify(payload)
+      })
+      .then(() => {
+        document.getElementById('quoteForm').style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      })
+      .catch(() => {
+        document.getElementById('quoteForm').style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      });
     });
   }
 </script>
