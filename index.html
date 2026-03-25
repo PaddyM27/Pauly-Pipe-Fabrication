@@ -1001,30 +1001,38 @@
     e.preventDefault();
     const btn = e.target.querySelector('button[type="submit"]');
     btn.disabled = true;
-    btn.textContent = 'Sending…';
+    btn.textContent = 'Opening WhatsApp…';
 
     const service = document.getElementById('fService').value;
     const machine = document.getElementById('fMachine').value;
+    const name    = document.getElementById('fName').value;
+    const phone   = document.getElementById('fPhone').value;
+    const message = document.getElementById('fMessage').value;
+    const hasPhoto = window._photosSelected || false;
+
+    // Build WhatsApp message synchronously & open immediately (must be in direct click handler)
+    const parts = [];
+    parts.push("Hi Paul, I'd like to get a quote.");
+    if (service) parts.push("I'm looking for: " + service + (machine ? ' — ' + machine : '') + ".");
+    if (message) parts.push(message);
+    parts.push("My name is " + name + " and my number is " + phone + ". Thanks!");
+    const waUrl = 'https://wa.me/353879337406?text=' + encodeURIComponent(parts.join(" "));
+
+    document.getElementById('waFollowUp').href = waUrl;
+    if (hasPhoto) document.getElementById('waPhotoReminder').style.display = 'block';
+    document.getElementById('quoteForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+    window.open(waUrl, '_blank');
+
+    // Send to Google Sheets in the background
     const photoInput = document.getElementById('photoUpload');
     const files = photoInput.files ? Array.from(photoInput.files) : [];
-
     readFilesAsBase64(files).then(photos => {
-      const payload = {
-        name:     document.getElementById('fName').value,
-        phone:    document.getElementById('fPhone').value,
-        service:  service + (machine ? ' — ' + machine : ''),
-        message:  document.getElementById('fMessage').value,
-        hasPhoto: photos.length > 0,
-        photos:   photos
-      };
-
       fetch(SHEETS_URL, {
         method: 'POST',
         mode: 'no-cors',
-        body: JSON.stringify(payload)
-      })
-      .then(() => showSuccess(payload))
-      .catch(() => showSuccess(payload));
+        body: JSON.stringify({ name, phone, service: service + (machine ? ' — ' + machine : ''), message, hasPhoto, photos })
+      });
     });
   }
 </script>
