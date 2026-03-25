@@ -11,19 +11,19 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root {
-      --bg:       #060a0d;
-      --surface1: #0b1016;
-      --surface2: #10181f;
-      --surface3: #162029;
-      --ember:    #f97316;
-      --ember-lt: #ffa04d;
-      --ember-dk: #d4600a;
-      --steel:    #97afc4;
-      --steel-dk: #5a7a92;
-      --steel-dim:#2e4456;
-      --text:     #eef1f4;
-      --border:   rgba(255,255,255,0.055);
-      --border-em:rgba(249,115,22,0.18);
+      --bg:        #0a0704;
+      --surface1:  #130d09;
+      --surface2:  #1c1209;
+      --surface3:  #261910;
+      --ember:     #c07838;
+      --ember-lt:  #d49868;
+      --ember-dk:  #8c5020;
+      --steel:     #aa9282;
+      --steel-dk:  #6e5a4c;
+      --steel-dim: #3c2a1e;
+      --text:      #f4ece4;
+      --border:    rgba(255,235,210,0.07);
+      --border-em: rgba(192,120,56,0.2);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -100,13 +100,13 @@
       border-radius: 6px;
       border: none;
       cursor: pointer;
-      box-shadow: 0 4px 24px -4px rgba(249,115,22,0.45), 0 1px 2px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 24px -4px rgba(192,120,56,0.45), 0 1px 2px rgba(0,0,0,0.3);
       transition: transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.2s ease, background 0.2s ease;
     }
     .btn-primary:hover {
-      background: #ff8422;
+      background: #d08840;
       transform: translateY(-2px);
-      box-shadow: 0 8px 32px -4px rgba(249,115,22,0.55), 0 2px 4px rgba(0,0,0,0.3);
+      box-shadow: 0 8px 32px -4px rgba(192,120,56,0.55), 0 2px 4px rgba(0,0,0,0.3);
     }
     .btn-primary:active { transform: translateY(0); }
 
@@ -127,9 +127,9 @@
       transition: border-color 0.2s, color 0.2s, background 0.2s, transform 0.2s cubic-bezier(0.22,1,0.36,1);
     }
     .btn-ghost:hover {
-      border-color: rgba(249,115,22,0.4);
+      border-color: rgba(192,120,56,0.4);
       color: var(--text);
-      background: rgba(249,115,22,0.06);
+      background: rgba(192,120,56,0.06);
       transform: translateY(-2px);
     }
     .btn-ghost:active { transform: translateY(0); }
@@ -178,12 +178,12 @@
     .g-img:hover img { transform: scale(1.05); }
     .g-img .g-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(6,10,13,0.9) 0%, rgba(6,10,13,0.2) 45%, transparent 100%);
+      background: linear-gradient(to top, rgba(10,7,4,0.9) 0%, rgba(10,7,4,0.2) 45%, transparent 100%);
       z-index: 1;
     }
     .g-img .g-tint {
       position: absolute; inset: 0;
-      background: rgba(249,115,22,0.15);
+      background: rgba(192,120,56,0.15);
       mix-blend-mode: multiply;
       z-index: 2;
       pointer-events: none;
@@ -212,20 +212,20 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 50% 0%, rgba(249,115,22,0.06) 0%, transparent 60%);
+      background: radial-gradient(ellipse at 50% 0%, rgba(192,120,56,0.06) 0%, transparent 60%);
       opacity: 0;
       transition: opacity 0.3s;
     }
     .svc-card:hover {
-      border-color: rgba(249,115,22,0.22);
+      border-color: rgba(192,120,56,0.22);
       transform: translateY(-5px);
-      box-shadow: 0 20px 48px -12px rgba(0,0,0,0.6), 0 4px 16px -4px rgba(249,115,22,0.12);
+      box-shadow: 0 20px 48px -12px rgba(0,0,0,0.6), 0 4px 16px -4px rgba(192,120,56,0.12);
     }
     .svc-card:hover::before { opacity: 1; }
     .svc-icon {
       width: 44px; height: 44px;
-      background: rgba(249,115,22,0.08);
-      border: 1px solid rgba(249,115,22,0.15);
+      background: rgba(192,120,56,0.08);
+      border: 1px solid rgba(192,120,56,0.15);
       border-radius: 10px;
       display: flex; align-items: center; justify-content: center;
       margin-bottom: 20px;
@@ -234,8 +234,8 @@
     }
     .svc-card:hover .svc-icon {
       color: var(--ember);
-      background: rgba(249,115,22,0.12);
-      border-color: rgba(249,115,22,0.3);
+      background: rgba(192,120,56,0.12);
+      border-color: rgba(192,120,56,0.3);
     }
 
     /* ── Testimonial cards ── */
@@ -247,7 +247,7 @@
       transition: border-color 0.25s, transform 0.3s cubic-bezier(0.22,1,0.36,1);
     }
     .testi-card:hover {
-      border-color: rgba(249,115,22,0.15);
+      border-color: rgba(192,120,56,0.15);
       transform: translateY(-4px);
     }
 
@@ -266,9 +266,9 @@
     }
     .f-input:focus {
       outline: none;
-      border-color: rgba(249,115,22,0.45);
+      border-color: rgba(192,120,56,0.45);
       background: rgba(255,255,255,0.05);
-      box-shadow: 0 0 0 3px rgba(249,115,22,0.1);
+      box-shadow: 0 0 0 3px rgba(192,120,56,0.1);
     }
     .f-input::placeholder { color: var(--steel-dim); }
     .f-input option { background: var(--surface2); color: var(--text); }
@@ -315,24 +315,40 @@
     #mob-nav.open { display: block; }
 
     /* ── Focus ── */
-    :focus-visible { outline: 2px solid rgba(249,115,22,0.7); outline-offset: 3px; border-radius: 4px; }
+    :focus-visible { outline: 2px solid rgba(192,120,56,0.7); outline-offset: 3px; border-radius: 4px; }
 
     /* ── Responsive ── */
     @media (max-width: 1024px) {
-      .svc-grid { grid-template-columns: repeat(2, 1fr) !important; }
-      .about-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
-      .contact-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
-      .footer-grid { grid-template-columns: 1fr 1fr !important; }
+      .svc-grid     { grid-template-columns: repeat(2, 1fr) !important; }
+      .about-grid   { grid-template-columns: 1fr !important; gap: 48px !important; }
+      .contact-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+      .footer-grid  { grid-template-columns: 1fr 1fr !important; }
     }
     @media (max-width: 768px) {
-      .testi-grid { grid-template-columns: 1fr !important; }
-      .footer-grid { grid-template-columns: 1fr !important; }
+      body { padding-bottom: 70px; }
+      .testi-grid   { grid-template-columns: 1fr !important; }
+      .footer-grid  { grid-template-columns: 1fr !important; }
       .gal-featured { grid-template-columns: 1fr !important; }
-      .gal-lower { grid-template-columns: repeat(2,1fr) !important; }
+      .gal-lower    { grid-template-columns: repeat(2,1fr) !important; }
+      .hero-stats   { gap: 0 !important; padding-top: 28px !important; }
+      .hero-stats > div { padding: 0 20px !important; border-right: none !important; border-bottom: 1px solid rgba(255,235,210,0.06) !important; padding-bottom: 16px !important; margin-bottom: 16px !important; }
+      .hero-stats > div:last-child { border-bottom: none !important; padding-bottom: 0 !important; margin-bottom: 0 !important; }
+      .form-2col    { grid-template-columns: 1fr !important; }
+      section       { padding-top: 72px !important; padding-bottom: 72px !important; }
+      .section-pad  { padding-top: 72px !important; padding-bottom: 72px !important; }
     }
     @media (max-width: 520px) {
-      .svc-grid { grid-template-columns: 1fr !important; }
-      .gal-lower { grid-template-columns: 1fr !important; }
+      .svc-grid     { grid-template-columns: 1fr !important; }
+      .gal-lower    { grid-template-columns: 1fr !important; }
+      .gal-featured .g-img { height: 220px !important; }
+      .gal-lower .g-img    { height: 180px !important; }
+      .hero-btns    { flex-direction: column !important; align-items: stretch !important; }
+      .hero-btns a  { justify-content: center !important; text-align: center !important; }
+      .hero-tags    { justify-content: center !important; }
+      .svc-card     { padding: 24px 20px !important; }
+      .testi-card   { padding: 24px 20px !important; }
+      .about-img    { aspect-ratio: 4/3 !important; }
+      .about-float-card { display: none !important; }
     }
   </style>
 </head>
@@ -340,7 +356,7 @@
 
 <!-- ═══════════════════════════════ NAV ═══════════════════════════════ -->
 <header id="navbar" style="position:fixed;top:0;left:0;right:0;z-index:200;" class="fade-in">
-  <div style="background:rgba(6,10,13,0.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);">
+  <div style="background:rgba(10,7,4,0.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);">
     <div style="max-width:1200px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;">
 
       <a href="#" style="text-decoration:none;display:flex;align-items:center;">
@@ -388,20 +404,20 @@
   <!-- Background -->
   <div style="position:absolute;inset:0;z-index:0;">
     <img src="images/workshop.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;">
-    <div style="position:absolute;inset:0;background:rgba(6,10,13,0.75);"></div>
-    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 55%,rgba(249,115,22,0.12) 0%,transparent 65%);"></div>
-    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(249,115,22,0.07) 0%,transparent 50%);"></div>
-    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(6,10,13,0.6) 0%,transparent 50%);"></div>
+    <div style="position:absolute;inset:0;background:rgba(10,7,4,0.78);"></div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 55%,rgba(192,120,56,0.12) 0%,transparent 65%);"></div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(192,120,56,0.07) 0%,transparent 50%);"></div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(10,7,4,0.6) 0%,transparent 50%);"></div>
   </div>
 
   <!-- Edge lines -->
-  <div style="position:absolute;top:0;right:0;width:1px;height:100%;background:linear-gradient(to bottom,transparent,rgba(249,115,22,0.25) 40%,rgba(249,115,22,0.25) 60%,transparent);z-index:1;pointer-events:none;"></div>
-  <div style="position:absolute;top:0;left:0;width:1px;height:100%;background:linear-gradient(to bottom,transparent,rgba(249,115,22,0.08) 40%,rgba(249,115,22,0.08) 60%,transparent);z-index:1;pointer-events:none;"></div>
+  <div style="position:absolute;top:0;right:0;width:1px;height:100%;background:linear-gradient(to bottom,transparent,rgba(192,120,56,0.25) 40%,rgba(192,120,56,0.25) 60%,transparent);z-index:1;pointer-events:none;"></div>
+  <div style="position:absolute;top:0;left:0;width:1px;height:100%;background:linear-gradient(to bottom,transparent,rgba(192,120,56,0.08) 40%,rgba(192,120,56,0.08) 60%,transparent);z-index:1;pointer-events:none;"></div>
 
   <!-- Content -->
   <div style="position:relative;z-index:2;width:100%;max-width:860px;margin:0 auto;padding:64px 24px 80px;text-align:center;">
 
-    <div class="fade-up d1" style="display:inline-flex;align-items:center;gap:8px;background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.2);border-radius:100px;padding:5px 16px;margin-bottom:36px;">
+    <div class="fade-up d1" style="display:inline-flex;align-items:center;gap:8px;background:rgba(192,120,56,0.08);border:1px solid rgba(192,120,56,0.2);border-radius:100px;padding:5px 16px;margin-bottom:36px;">
       <span style="width:5px;height:5px;background:var(--ember);border-radius:50%;animation:pulse 2s infinite;display:inline-block;"></span>
       <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--ember);">Built in Cavan · Serving all of Ireland</span>
     </div>
@@ -416,14 +432,14 @@
       Heat guards, LED light bars, mirror guards and custom exhausts — handmade to order in County Cavan. Built for tractors, plant machinery and everything in between.
     </p>
 
-    <div class="fade-up d3" style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:44px;justify-content:center;">
+    <div class="fade-up d3 hero-tags" style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:44px;justify-content:center;">
       <span style="background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:4px;padding:4px 13px;font-size:0.78rem;color:var(--steel-dk);font-family:'Barlow Condensed',sans-serif;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;">Heat Guards</span>
       <span style="background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:4px;padding:4px 13px;font-size:0.78rem;color:var(--steel-dk);font-family:'Barlow Condensed',sans-serif;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;">LED Light Bars</span>
       <span style="background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:4px;padding:4px 13px;font-size:0.78rem;color:var(--steel-dk);font-family:'Barlow Condensed',sans-serif;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;">Mirror Guards</span>
       <span style="background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:4px;padding:4px 13px;font-size:0.78rem;color:var(--steel-dk);font-family:'Barlow Condensed',sans-serif;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;">Custom Exhausts</span>
     </div>
 
-    <div class="fade-up d4" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:64px;">
+    <div class="fade-up d4 hero-btns" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:64px;">
       <a href="#contact" class="btn-primary" style="padding:14px 32px;font-size:0.92rem;">Get a Free Quote</a>
       <a href="https://wa.me/353879337406?text=Hi%2C%20I'd%20like%20a%20quote%20from%20Pauly%20Pipe%20Fabrication" target="_blank" rel="noopener" class="btn-ghost" style="padding:13px 24px;font-size:0.92rem;">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -432,7 +448,7 @@
     </div>
 
     <!-- Trust stats -->
-    <div class="fade-up d5" style="display:flex;flex-wrap:wrap;justify-content:center;border-top:1px solid rgba(255,255,255,0.06);padding-top:36px;gap:0;">
+    <div class="fade-up d5 hero-stats" style="display:flex;flex-wrap:wrap;justify-content:center;border-top:1px solid rgba(255,255,255,0.06);padding-top:36px;gap:0;">
       <div style="padding:0 36px;text-align:center;border-right:1px solid rgba(255,255,255,0.06);">
         <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2rem;color:var(--ember);line-height:1;margin-bottom:4px;">100%</div>
         <div style="font-size:0.75rem;color:var(--steel-dim);letter-spacing:0.05em;">Custom Made</div>
@@ -458,7 +474,7 @@
 
 <!-- ═══════════════════════════════ GALLERY ═══════════════════════════════ -->
 <section id="gallery" style="background:var(--surface1);padding:120px 0;position:relative;overflow:hidden;">
-  <div style="position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:800px;height:400px;background:radial-gradient(ellipse at center,rgba(249,115,22,0.04) 0%,transparent 70%);pointer-events:none;"></div>
+  <div style="position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:800px;height:400px;background:radial-gradient(ellipse at center,rgba(192,120,56,0.04) 0%,transparent 70%);pointer-events:none;"></div>
 
   <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
 
@@ -516,7 +532,7 @@
 
 <!-- ═══════════════════════════════ SERVICES ═══════════════════════════════ -->
 <section id="services" style="background:var(--bg);padding:120px 0;position:relative;overflow:hidden;">
-  <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:900px;height:500px;background:radial-gradient(ellipse at center top,rgba(249,115,22,0.05) 0%,transparent 65%);pointer-events:none;"></div>
+  <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:900px;height:500px;background:radial-gradient(ellipse at center top,rgba(192,120,56,0.05) 0%,transparent 65%);pointer-events:none;"></div>
 
   <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
 
@@ -536,24 +552,24 @@
         <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.25rem;letter-spacing:0.02em;color:var(--text);margin-bottom:10px;">Heat Guards</h3>
         <p style="color:var(--steel-dk);font-size:0.86rem;line-height:1.75;margin-bottom:18px;">Custom stainless steel heat shields fabricated to fit your exhaust, protecting your machine and crew from radiant heat. Made to measure for any make or model.</p>
         <div style="display:flex;flex-wrap:wrap;gap:5px;">
-          <span style="background:rgba(249,115,22,0.07);border:1px solid rgba(249,115,22,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Stainless Steel</span>
-          <span style="background:rgba(249,115,22,0.07);border:1px solid rgba(249,115,22,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Bespoke Fit</span>
+          <span style="background:rgba(192,120,56,0.07);border:1px solid rgba(192,120,56,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Stainless Steel</span>
+          <span style="background:rgba(192,120,56,0.07);border:1px solid rgba(192,120,56,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Bespoke Fit</span>
         </div>
       </div>
 
       <!-- Light Bars — featured -->
-      <div class="svc-card" style="border-color:rgba(249,115,22,0.2);position:relative;overflow:hidden;">
+      <div class="svc-card" style="border-color:rgba(192,120,56,0.2);position:relative;overflow:hidden;">
         <div style="position:absolute;top:0;right:0;background:var(--ember);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:#fff;padding:4px 11px;border-radius:0 13px 0 8px;">Most Popular</div>
-        <div class="svc-icon" style="color:var(--ember);background:rgba(249,115,22,0.12);border-color:rgba(249,115,22,0.25);">
+        <div class="svc-icon" style="color:var(--ember);background:rgba(192,120,56,0.12);border-color:rgba(192,120,56,0.25);">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         </div>
         <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.25rem;letter-spacing:0.02em;color:var(--text);margin-bottom:10px;">LED Light Bars</h3>
         <p style="color:var(--steel-dk);font-size:0.86rem;line-height:1.75;margin-bottom:18px;">Polished stainless or powder coated. Colour, flashing/strobing and non-flashing options with integrated LED work lights. Fitted and wired to your machine.</p>
         <div style="display:flex;flex-wrap:wrap;gap:5px;">
-          <span style="background:rgba(249,115,22,0.07);border:1px solid rgba(249,115,22,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Polished</span>
-          <span style="background:rgba(249,115,22,0.07);border:1px solid rgba(249,115,22,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Powder Coated</span>
-          <span style="background:rgba(249,115,22,0.07);border:1px solid rgba(249,115,22,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Colour LED</span>
-          <span style="background:rgba(249,115,22,0.07);border:1px solid rgba(249,115,22,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Flashing</span>
+          <span style="background:rgba(192,120,56,0.07);border:1px solid rgba(192,120,56,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Polished</span>
+          <span style="background:rgba(192,120,56,0.07);border:1px solid rgba(192,120,56,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Powder Coated</span>
+          <span style="background:rgba(192,120,56,0.07);border:1px solid rgba(192,120,56,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Colour LED</span>
+          <span style="background:rgba(192,120,56,0.07);border:1px solid rgba(192,120,56,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Flashing</span>
         </div>
       </div>
 
@@ -565,8 +581,8 @@
         <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.25rem;letter-spacing:0.02em;color:var(--text);margin-bottom:10px;">Mirror Guards</h3>
         <p style="color:var(--steel-dk);font-size:0.86rem;line-height:1.75;margin-bottom:18px;">Heavy-duty pipe guards to protect your mirrors and lights from knocks and hedge trimming damage. Custom shaped to clear your existing mirrors perfectly.</p>
         <div style="display:flex;flex-wrap:wrap;gap:5px;">
-          <span style="background:rgba(249,115,22,0.07);border:1px solid rgba(249,115,22,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Heavy Duty</span>
-          <span style="background:rgba(249,115,22,0.07);border:1px solid rgba(249,115,22,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Custom Shape</span>
+          <span style="background:rgba(192,120,56,0.07);border:1px solid rgba(192,120,56,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Heavy Duty</span>
+          <span style="background:rgba(192,120,56,0.07);border:1px solid rgba(192,120,56,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Custom Shape</span>
         </div>
       </div>
 
@@ -578,8 +594,8 @@
         <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.25rem;letter-spacing:0.02em;color:var(--text);margin-bottom:10px;">Custom Exhausts</h3>
         <p style="color:var(--steel-dk);font-size:0.86rem;line-height:1.75;margin-bottom:18px;">Bespoke exhaust fabrication for tractors and plant machinery. Whether it's a replacement, reroute or full custom system — we'll fabricate it to fit.</p>
         <div style="display:flex;flex-wrap:wrap;gap:5px;">
-          <span style="background:rgba(249,115,22,0.07);border:1px solid rgba(249,115,22,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Stainless</span>
-          <span style="background:rgba(249,115,22,0.07);border:1px solid rgba(249,115,22,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Mild Steel</span>
+          <span style="background:rgba(192,120,56,0.07);border:1px solid rgba(192,120,56,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Stainless</span>
+          <span style="background:rgba(192,120,56,0.07);border:1px solid rgba(192,120,56,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Mild Steel</span>
         </div>
       </div>
 
@@ -591,8 +607,8 @@
         <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.25rem;letter-spacing:0.02em;color:var(--text);margin-bottom:10px;">Tractor Custom Work</h3>
         <p style="color:var(--steel-dk);font-size:0.86rem;line-height:1.75;margin-bottom:18px;">From full light bar setups to custom frames, guards and brackets — if you can picture it, we can build it. Experience with all major makes and models.</p>
         <div style="display:flex;flex-wrap:wrap;gap:5px;">
-          <span style="background:rgba(249,115,22,0.07);border:1px solid rgba(249,115,22,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">All Makes</span>
-          <span style="background:rgba(249,115,22,0.07);border:1px solid rgba(249,115,22,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Custom Frames</span>
+          <span style="background:rgba(192,120,56,0.07);border:1px solid rgba(192,120,56,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">All Makes</span>
+          <span style="background:rgba(192,120,56,0.07);border:1px solid rgba(192,120,56,0.14);border-radius:4px;padding:3px 9px;font-size:0.68rem;color:var(--ember-lt);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Custom Frames</span>
         </div>
       </div>
 
@@ -603,7 +619,7 @@
 
 <!-- ═══════════════════════════════ ABOUT ═══════════════════════════════ -->
 <section id="about" style="background:var(--surface1);padding:120px 0;position:relative;overflow:hidden;">
-  <div style="position:absolute;bottom:-100px;right:-100px;width:600px;height:600px;background:radial-gradient(ellipse at center,rgba(249,115,22,0.04) 0%,transparent 65%);pointer-events:none;"></div>
+  <div style="position:absolute;bottom:-100px;right:-100px;width:600px;height:600px;background:radial-gradient(ellipse at center,rgba(192,120,56,0.04) 0%,transparent 65%);pointer-events:none;"></div>
 
   <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
     <div class="about-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
@@ -616,7 +632,7 @@
 
         <div style="display:flex;flex-direction:column;gap:24px;">
           <div style="display:flex;gap:16px;align-items:flex-start;">
-            <div style="width:36px;height:36px;background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+            <div style="width:36px;height:36px;background:rgba(192,120,56,0.08);border:1px solid rgba(192,120,56,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ember)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
             <div>
@@ -625,7 +641,7 @@
             </div>
           </div>
           <div style="display:flex;gap:16px;align-items:flex-start;">
-            <div style="width:36px;height:36px;background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+            <div style="width:36px;height:36px;background:rgba(192,120,56,0.08);border:1px solid rgba(192,120,56,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ember)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
             <div>
@@ -634,7 +650,7 @@
             </div>
           </div>
           <div style="display:flex;gap:16px;align-items:flex-start;">
-            <div style="width:36px;height:36px;background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+            <div style="width:36px;height:36px;background:rgba(192,120,56,0.08);border:1px solid rgba(192,120,56,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ember)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
             <div>
@@ -643,7 +659,7 @@
             </div>
           </div>
           <div style="display:flex;gap:16px;align-items:flex-start;">
-            <div style="width:36px;height:36px;background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+            <div style="width:36px;height:36px;background:rgba(192,120,56,0.08);border:1px solid rgba(192,120,56,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ember)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
             <div>
@@ -656,13 +672,13 @@
 
       <!-- Right: image -->
       <div style="position:relative;">
-        <div style="border-radius:14px;overflow:hidden;aspect-ratio:3/4;position:relative;box-shadow:0 40px 80px -20px rgba(0,0,0,0.7),0 0 0 1px var(--border);">
+        <div class="about-img" style="border-radius:14px;overflow:hidden;aspect-ratio:3/4;position:relative;box-shadow:0 40px 80px -20px rgba(0,0,0,0.7),0 0 0 1px var(--border);">
           <img src="images/workshop.jpg" alt="Fabrication workshop" style="width:100%;height:100%;object-fit:cover;display:block;">
-          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(6,10,13,0.6) 0%,transparent 55%);z-index:1;"></div>
-          <div style="position:absolute;inset:0;background:rgba(249,115,22,0.12);mix-blend-mode:multiply;z-index:2;pointer-events:none;"></div>
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,7,4,0.6) 0%,transparent 55%);z-index:1;"></div>
+          <div style="position:absolute;inset:0;background:rgba(192,120,56,0.12);mix-blend-mode:multiply;z-index:2;pointer-events:none;"></div>
         </div>
         <!-- WhatsApp card -->
-        <div style="position:absolute;bottom:28px;left:-28px;z-index:10;background:var(--surface3);border:1px solid rgba(249,115,22,0.2);border-radius:12px;padding:20px 22px;box-shadow:0 16px 48px -8px rgba(0,0,0,0.65),0 0 0 1px rgba(255,255,255,0.03) inset;max-width:220px;backdrop-filter:blur(10px);">
+        <div class="about-float-card" style="position:absolute;bottom:28px;left:-28px;z-index:10;background:var(--surface3);border:1px solid rgba(192,120,56,0.2);border-radius:12px;padding:20px 22px;box-shadow:0 16px 48px -8px rgba(0,0,0,0.65),0 0 0 1px rgba(255,255,255,0.03) inset;max-width:220px;backdrop-filter:blur(10px);">
           <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--ember);margin-bottom:8px;">Send us a WhatsApp</div>
           <div style="color:var(--text);font-size:0.83rem;line-height:1.55;margin-bottom:12px;">Photo of your machine + what you need = quick quote. Simple as that.</div>
           <a href="https://wa.me/353879337406?text=Hi%2C%20I'd%20like%20a%20quote%20from%20Pauly%20Pipe%20Fabrication" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:#25D366;text-decoration:none;">
@@ -679,7 +695,7 @@
 
 <!-- ═══════════════════════════════ TESTIMONIALS ═══════════════════════════════ -->
 <section style="background:var(--bg);padding:120px 0;position:relative;overflow:hidden;">
-  <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:700px;height:300px;background:radial-gradient(ellipse at center top,rgba(249,115,22,0.04) 0%,transparent 70%);pointer-events:none;"></div>
+  <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:700px;height:300px;background:radial-gradient(ellipse at center top,rgba(192,120,56,0.04) 0%,transparent 70%);pointer-events:none;"></div>
 
   <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
     <div style="text-align:center;margin-bottom:64px;">
@@ -696,7 +712,7 @@
         </div>
         <p style="color:var(--steel-dk);font-size:0.88rem;line-height:1.8;margin-bottom:24px;font-style:italic;">"Got a set of light bars made for the John Deere — exactly what I wanted, polished up beautiful. Quick turnaround and a fair price. Would definitely recommend."</p>
         <div style="display:flex;align-items:center;gap:12px;padding-top:20px;border-top:1px solid var(--border);">
-          <div style="width:34px;height:34px;border-radius:50%;background:rgba(249,115,22,0.12);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;color:var(--ember);font-size:0.95rem;flex-shrink:0;">S</div>
+          <div style="width:34px;height:34px;border-radius:50%;background:rgba(192,120,56,0.12);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;color:var(--ember);font-size:0.95rem;flex-shrink:0;">S</div>
           <div>
             <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.92rem;color:var(--text);">Seán Maguire</div>
             <div style="font-size:0.72rem;color:var(--steel-dim);">Farmer, Co. Cavan</div>
@@ -711,7 +727,7 @@
         </div>
         <p style="color:var(--steel-dk);font-size:0.88rem;line-height:1.8;margin-bottom:24px;font-style:italic;">"Had heat guards made for the Case exhaust. Fit perfectly first time, no hassle. Good quality work and Paul was sound to deal with. Cheers!"</p>
         <div style="display:flex;align-items:center;gap:12px;padding-top:20px;border-top:1px solid var(--border);">
-          <div style="width:34px;height:34px;border-radius:50%;background:rgba(249,115,22,0.12);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;color:var(--ember);font-size:0.95rem;flex-shrink:0;">D</div>
+          <div style="width:34px;height:34px;border-radius:50%;background:rgba(192,120,56,0.12);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;color:var(--ember);font-size:0.95rem;flex-shrink:0;">D</div>
           <div>
             <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.92rem;color:var(--text);">Damien Brady</div>
             <div style="font-size:0.72rem;color:var(--steel-dim);">Contractor, Co. Monaghan</div>
@@ -726,7 +742,7 @@
         </div>
         <p style="color:var(--steel-dk);font-size:0.88rem;line-height:1.8;margin-bottom:24px;font-style:italic;">"Ordered mirror guards for the New Holland. Solid bit of work, proper heavy duty. Lads at the mart couldn't believe I got them custom made locally."</p>
         <div style="display:flex;align-items:center;gap:12px;padding-top:20px;border-top:1px solid var(--border);">
-          <div style="width:34px;height:34px;border-radius:50%;background:rgba(249,115,22,0.12);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;color:var(--ember);font-size:0.95rem;flex-shrink:0;">P</div>
+          <div style="width:34px;height:34px;border-radius:50%;background:rgba(192,120,56,0.12);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;color:var(--ember);font-size:0.95rem;flex-shrink:0;">P</div>
           <div>
             <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.92rem;color:var(--text);">Pádraig Lynch</div>
             <div style="font-size:0.72rem;color:var(--steel-dim);">Farmer, Co. Meath</div>
@@ -741,8 +757,8 @@
 
 <!-- ═══════════════════════════════ CONTACT ═══════════════════════════════ -->
 <section id="contact" style="background:var(--surface1);padding:120px 0;position:relative;overflow:hidden;">
-  <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(249,115,22,0.2) 40%,rgba(249,115,22,0.2) 60%,transparent);"></div>
-  <div style="position:absolute;bottom:-150px;left:-100px;width:600px;height:600px;background:radial-gradient(ellipse at center,rgba(249,115,22,0.05) 0%,transparent 65%);pointer-events:none;"></div>
+  <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(192,120,56,0.2) 40%,rgba(192,120,56,0.2) 60%,transparent);"></div>
+  <div style="position:absolute;bottom:-150px;left:-100px;width:600px;height:600px;background:radial-gradient(ellipse at center,rgba(192,120,56,0.05) 0%,transparent 65%);pointer-events:none;"></div>
 
   <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
     <div class="contact-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
@@ -754,8 +770,8 @@
         <p style="color:var(--steel-dk);font-size:0.95rem;line-height:1.85;margin-bottom:44px;">Fill in the form and <strong style="color:var(--steel);">attach a photo of your tractor</strong> — it helps us quote you fast and accurately. Or call/WhatsApp us directly.</p>
 
         <div style="display:flex;flex-direction:column;gap:12px;">
-          <a href="tel:+353879337406" style="display:flex;align-items:center;gap:16px;background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:18px 22px;text-decoration:none;transition:border-color 0.2s,transform 0.25s cubic-bezier(0.22,1,0.36,1);" onmouseover="this.style.borderColor='rgba(249,115,22,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)'">
-            <div style="width:42px;height:42px;background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.15);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <a href="tel:+353879337406" style="display:flex;align-items:center;gap:16px;background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:18px 22px;text-decoration:none;transition:border-color 0.2s,transform 0.25s cubic-bezier(0.22,1,0.36,1);" onmouseover="this.style.borderColor='rgba(192,120,56,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)'">
+            <div style="width:42px;height:42px;background:rgba(192,120,56,0.08);border:1px solid rgba(192,120,56,0.15);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--ember)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.18 2 2 0 012.08.1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.21-1.21a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
             </div>
             <div>
@@ -792,7 +808,7 @@
         <p style="color:var(--steel-dim);font-size:0.82rem;margin-bottom:28px;line-height:1.6;">Fill in what you need and attach a photo of your tractor — it helps us quote you accurately.</p>
 
         <form id="quoteForm" onsubmit="handleSubmit(event)" style="display:flex;flex-direction:column;gap:16px;">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div class="form-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
             <div>
               <label class="f-label">Your Name</label>
               <input type="text" id="fName" class="f-input" placeholder="John Smith" required>
@@ -824,7 +840,7 @@
 
           <div>
             <label class="f-label">Photo of Your Tractor / Machine <span style="text-transform:none;letter-spacing:0;color:var(--steel-dim);font-weight:400;">— helps us quote faster</span></label>
-            <label id="photoUploadLabel" for="photoUpload" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;width:100%;padding:22px 16px;border-radius:8px;border:1.5px dashed rgba(249,115,22,0.25);background:rgba(249,115,22,0.03);cursor:pointer;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='rgba(249,115,22,0.5)';this.style.background='rgba(249,115,22,0.07)'" onmouseout="if(!window._photosSelected){this.style.borderColor='rgba(249,115,22,0.25)';this.style.background='rgba(249,115,22,0.03)'}">
+            <label id="photoUploadLabel" for="photoUpload" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;width:100%;padding:22px 16px;border-radius:8px;border:1.5px dashed rgba(192,120,56,0.25);background:rgba(192,120,56,0.03);cursor:pointer;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='rgba(192,120,56,0.5)';this.style.background='rgba(192,120,56,0.07)'" onmouseout="if(!window._photosSelected){this.style.borderColor='rgba(192,120,56,0.25)';this.style.background='rgba(192,120,56,0.03)'}">
               <svg id="photoIcon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--ember)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.6;"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
               <div id="photoLabelText" style="text-align:center;">
                 <p style="font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:0.85rem;color:var(--steel-dk);margin:0 0 2px;">Click to attach photos</p>
@@ -845,7 +861,7 @@
         </form>
 
         <div id="formSuccess" style="display:none;text-align:center;padding:36px 20px;">
-          <div style="width:52px;height:52px;background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
+          <div style="width:52px;height:52px;background:rgba(192,120,56,0.1);border:1px solid rgba(192,120,56,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--ember)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
           <h4 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.35rem;color:var(--text);margin-bottom:8px;">WhatsApp is opening...</h4>
@@ -876,10 +892,10 @@
         </div>
         <p style="color:var(--steel-dim);font-size:0.82rem;line-height:1.75;max-width:280px;">Custom pipe fabrication in County Cavan. Heat guards, light bars, mirror guards, exhausts and custom work. Made to order, built to last.</p>
         <div style="display:flex;gap:10px;margin-top:20px;">
-          <a href="#" style="width:32px;height:32px;background:var(--surface2);border:1px solid var(--border);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--steel-dim);text-decoration:none;transition:border-color 0.2s,color 0.2s;" onmouseover="this.style.borderColor='rgba(249,115,22,0.3)';this.style.color='var(--ember)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--steel-dim)'" aria-label="Facebook">
+          <a href="#" style="width:32px;height:32px;background:var(--surface2);border:1px solid var(--border);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--steel-dim);text-decoration:none;transition:border-color 0.2s,color 0.2s;" onmouseover="this.style.borderColor='rgba(192,120,56,0.3)';this.style.color='var(--ember)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--steel-dim)'" aria-label="Facebook">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
           </a>
-          <a href="#" style="width:32px;height:32px;background:var(--surface2);border:1px solid var(--border);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--steel-dim);text-decoration:none;transition:border-color 0.2s,color 0.2s;" onmouseover="this.style.borderColor='rgba(249,115,22,0.3)';this.style.color='var(--ember)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--steel-dim)'" aria-label="Instagram">
+          <a href="#" style="width:32px;height:32px;background:var(--surface2);border:1px solid var(--border);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--steel-dim);text-decoration:none;transition:border-color 0.2s,color 0.2s;" onmouseover="this.style.borderColor='rgba(192,120,56,0.3)';this.style.color='var(--ember)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--steel-dim)'" aria-label="Instagram">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
           </a>
           <a href="https://wa.me/353879337406" target="_blank" rel="noopener" style="width:32px;height:32px;background:var(--surface2);border:1px solid var(--border);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--steel-dim);text-decoration:none;transition:border-color 0.2s,color 0.2s;" onmouseover="this.style.borderColor='rgba(37,211,102,0.3)';this.style.color='#25D366'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--steel-dim)'" aria-label="WhatsApp">
@@ -951,20 +967,20 @@
     list.innerHTML = '';
     if (!files.length) {
       window._photosSelected = false;
-      label.style.borderColor = 'rgba(249,115,22,0.25)';
-      label.style.background  = 'rgba(249,115,22,0.03)';
+      label.style.borderColor = 'rgba(192,120,56,0.25)';
+      label.style.background  = 'rgba(192,120,56,0.03)';
       return;
     }
     window._photosSelected = true;
-    label.style.borderColor = 'rgba(249,115,22,0.55)';
-    label.style.background  = 'rgba(249,115,22,0.08)';
+    label.style.borderColor = 'rgba(192,120,56,0.55)';
+    label.style.background  = 'rgba(192,120,56,0.08)';
     icon.style.opacity = '1';
     text.querySelector('p').textContent = files.length === 1 ? '1 photo attached' : files.length + ' photos attached';
     text.querySelector('p:last-child').textContent = 'Click to change';
     files.forEach(f => {
       const row = document.createElement('div');
       row.style.cssText = 'display:flex;align-items:center;gap:8px;padding:7px 10px;background:var(--surface1);border-radius:6px;border:1px solid var(--border);';
-      row.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>'
+      row.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c07838" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>'
         + '<span style="font-size:0.77rem;color:var(--steel);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + f.name + '</span>'
         + '<span style="font-size:0.7rem;color:var(--steel-dim);flex-shrink:0;">' + (f.size > 1048576 ? (f.size/1048576).toFixed(1)+'MB' : Math.round(f.size/1024)+'KB') + '</span>';
       list.appendChild(row);
